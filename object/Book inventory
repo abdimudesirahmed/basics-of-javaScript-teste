@@ -1,0 +1,51 @@
+const bookInventory = {
+  book1: {
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    pages: 218,
+    available: true
+  },
+  book2: {
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    pages: 281,
+    available: false
+  },
+  book3: {
+    title: "1984",
+    author: "George Orwell",
+    pages: 328,
+    available: true
+  }
+};
+
+console.log("Welcome to the Book Inventory!");
+
+const userInput = prompt("Enter the book number (1, 2, 3) to choose a book:");
+
+switch (userInput) {
+  case "1":
+    if (bookInventory.book1.available) {
+      console.log("You have chosen: " + bookInventory.book1.title);
+    } else {
+      console.log("The book is currently unavailable.");
+    }
+    break;
+  case "2":
+    if (bookInventory.book2.available) {
+      console.log("You have chosen: " + bookInventory.book2.title);
+    } else {
+      console.log("The book is currently unavailable.");
+    }
+    break;
+  case "3":
+    if (bookInventory.book3.available) {
+      console.log("You have chosen: " + bookInventory.book3.title);
+    } else {
+      console.log("The book is currently unavailable.");
+    }
+    break;
+  default:
+    console.log("Invalid choice. Please enter a valid book number.");
+    break;
+}
