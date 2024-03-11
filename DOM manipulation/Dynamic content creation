@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamically Create Paragraphs</title>
+  <style>
+    #dynamicContent {
+      display: none;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var dynamicContentDiv = document.getElementById("dynamicContent");
+      var button = document.getElementById("toggleButton");
+      
+      var messages = [
+        "This is the first paragraph.",
+        "Here comes the second paragraph.",
+        "The third paragraph is right here.",
+        "Fourth paragraph reporting for duty.",
+        "And finally, the fifth paragraph has arrived."
+      ];
+      
+      button.addEventListener("click", function() {
+        if (dynamicContentDiv.style.display === "none") {
+          dynamicContentDiv.style.display = "block";
+          for (var i = 0; i < messages.length; i++) {
+            var paragraph = document.createElement("p");
+            paragraph.textContent = messages[i];
+            dynamicContentDiv.appendChild(paragraph);
+          }
+        } else {
+          dynamicContentDiv.style.display = "none";
+          dynamicContentDiv.innerHTML = "";
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="toggleButton">Toggle Paragraphs</button>
+  <div id="dynamicContent"></div>
+</body>
+</html>
