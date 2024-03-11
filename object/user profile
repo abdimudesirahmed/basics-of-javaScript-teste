@@ -1,0 +1,15 @@
+const userProfile = {
+  name: "Abdi Mudesir",
+  age: 22,
+  email: "abdimudesir43@gmail.com",
+  updateValue: function(key, value) {
+    this[key] = value;
+  }
+};
+
+console.log(userProfile);
+
+userProfile.updateValue("age", 35);
+userProfile.updateValue("email", "abdimudesir@gmail.com");
+
+console.log(userProfile);
