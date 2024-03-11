@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toggle Content</title>
+  <script>
+    function toggleContent() {
+      var contentDiv = document.getElementById("content");
+      if (contentDiv.style.display === "none") {
+        contentDiv.style.display = "block";
+      } else {
+        contentDiv.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <button id="toggleButton" onclick="toggleContent()">Toggle Content</button>
+  <div id="content" style="display: none;">
+    <h2>Toggleable Content</h2>
+    <p>This is the content that will be toggled.</p>
+  </div>
+</body>
+</html>
