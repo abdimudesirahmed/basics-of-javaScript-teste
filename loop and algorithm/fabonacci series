@@ -1,0 +1,26 @@
+function generateFibonacciSeries(num) {
+    if (num <= 0) {
+      return [];
+    }
+  
+    const fibonacciSeries = [0, 1];
+  
+    for (let i = 2; i < num; i++) {
+      const nextNumber = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];
+      fibonacciSeries.push(nextNumber);
+    }
+  
+    return fibonacciSeries;
+  }
+  
+  const userInput = prompt("Enter a positive integer:");
+  const num = parseInt(userInput);
+  
+  if (Number.isNaN(num) || num <= 0) {
+    console.log("Invalid input. Please enter a positive integer.");
+  } else {
+    const fibonacciSeries = generateFibonacciSeries(num);
+    console.log(`The Fibonacci series up to the ${num}th element is:`);
+    console.log(fibonacciSeries);
+  }
+  
